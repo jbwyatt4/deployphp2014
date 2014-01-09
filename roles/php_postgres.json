@@ -1,0 +1,16 @@
+{
+  "name": "php_postgres",
+  "description": "Sets up a single PHP server with a PostgreSQL backend",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+"recipe[deployserver]", "recipe[deployserver::postgres_install]", "recipe[deployserver::nginx_php_install_postgres]", "recipe[deployserver::php_stub]", "recipe[deployserver::wordpress_postgres]", "recipe[deployserver::restart]"   
+  ],
+  "env_run_lists": {
+  }
+}
+

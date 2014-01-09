@@ -1,0 +1,16 @@
+{
+  "name": "php_mysql",
+  "description": "Sets up a single PHP server with a MySQL backend",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+"recipe[deployserver]", "recipe[deployserver::mysql_install]", "recipe[deployserver::nginx_php_install_mysql]", "recipe[deployserver::php_stub]", "recipe[deployserver::wordpress]", "recipe[deployserver::restart]"   
+  ],
+  "env_run_lists": {
+  }
+}
+
